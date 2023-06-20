@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <input type="text" id="data" />
+        <button onclick="downloadData()">download</button>
+        <!-- <a href="spectest.pdf" download="1spc.pdf">download</a> -->
+
+        <script>
+            function downloadData(){
+                var data=document.getElementById("data").value;
+                data=data.split(" ")
+                console.log(data)
+                for(var i=0;i<data.length;i++)
+                {
+                    var a = document.createElement('a');
+                    a.href = "spectest.pdf";
+                    a.download = data[i]+"Spec";
+                    a.click();
+                }
+            }
+            
+        </script>
+    </body>
+</html>
