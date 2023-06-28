@@ -2,7 +2,7 @@
     <body>
         <input type="text" id="data" />
         <button onclick="downloadData()">download</button>
-        <!-- <a href="Ins12.Pdf" download="1spc.pdf">download</a> -->
+        <!-- <a href="Ins1.Pdf" download="1spc.pdf">download</a> -->
 
         <script>
             function downloadData(){
@@ -12,7 +12,7 @@
                 for(var i=0;i<data.length;i++)
                 {
                     var a = document.createElement('a');
-                    a.href = "Ins12.pdf";
+                    a.href = "Ins1.pdf";
                     a.download = data[i]+"Install";
                     a.click();
                 }
