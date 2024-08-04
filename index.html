@@ -2,7 +2,7 @@
     <body>
         <input type="text" id="data" />
         <button onclick="downloadData()">download</button>
-        <!-- <a href="UFO-58WLED-UNIV-40-LB.ies" download="1spc.pdf">download</a> -->
+        <!-- <a href="UFO-75WLED-UNIV-40-LB.ies" download="1spc.pdf">download</a> -->
 
         <script>
             function downloadData(){
@@ -12,7 +12,7 @@
                 for(var i=0;i<data.length;i++)
                 {
                     var a = document.createElement('a');
-                    a.href = "UFO-58WLED-UNIV-40-LB.ies";
+                    a.href = "UFO-75WLED-UNIV-40-LB.ies";
                     a.download = data[i]+".IES";
                     a.click();
                 }
