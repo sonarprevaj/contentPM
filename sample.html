@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <input type="text" id="data" placeholder="Enter items separated by spaces" />
+        <button onclick="downloadData()">Download</button>
+
+        <script>
+            function downloadData() {
+                // Get the user input and split it into an array
+                var data = document.getElementById("data").value.split(" ");
+                console.log(data);
+
+                // Loop through each item in the array
+                for (var i = 0; i < data.length; i++) {
+                    // Download the specification file
+                    var specLink = document.createElement('a');
+                    specLink.href = "sp.pdf"; // Path to the specification file
+                    specLink.download = data[i] + "Spec.pdf"; // File name for the specification
+                    specLink.click();
+
+                    // Download the installation file
+                    var installLink = document.createElement('a');
+                    installLink.href = "install.pdf"; // Path to the installation file
+                    installLink.download = data[i] + "Install.pdf"; // File name for the installation
+                    installLink.click();
+                }
+            }
+        </script>
+    </body>
+</html>
