@@ -4,7 +4,7 @@
         <button onclick="downloadData()">download</button>
         <!-- <a href="sp.pdf" download="1spc.pdf">download</a> -->
         <!-- <a href="ins.pdf" download="1spc.pdf">download</a> -->
-        <!-- <a href="1.ies" download="1spc.pdf">download</a> -->
+        
 
         <script>
             function downloadData(){
@@ -24,12 +24,7 @@
                     a.download = data[i]+"Spec";
                     a.click();
                 }
-                {
-                    var a = document.createElement('a');
-                    a.href = "1.ies";
-                    a.download = data[i]+".ies";
-                    a.click();
-                }
+               
             }
             
         </script>
