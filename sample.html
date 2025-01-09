@@ -1,29 +1,37 @@
 <html>
     <body>
-        <input type="text" id="data" placeholder="Enter items separated by spaces" />
-        <button onclick="downloadData()">Download</button>
+        <input type="text" id="data" />
+        <button onclick="downloadData()">download</button>
+        <!-- <a href="sp.pdf" download="1spc.pdf">download</a> -->
+        <!-- <a href="ins.pdf" download="1spc.pdf">download</a> -->
+        <!-- <a href="1.ies" download="1spc.pdf">download</a> -->
 
         <script>
-            function downloadData() {
-                // Get the user input and split it into an array
-                var data = document.getElementById("data").value.split(" ");
-                console.log(data);
-
-                // Loop through each item in the array
-                for (var i = 0; i < data.length; i++) {
-                    // Download the specification file
-                    var specLink = document.createElement('a');
-                    specLink.href = "sp.pdf"; // Path to the specification file
-                    specLink.download = data[i] + "Sp.pdf"; // File name for the specification
-                    specLink.click();
-
-                    // Download the installation file
-                    var installLink = document.createElement('a');
-                    installLink.href = "ins.pdf"; // Path to the installation file
-                    installLink.download = data[i] + "Ins.pdf"; // File name for the installation
-                    installLink.click();
+            function downloadData(){
+                var data=document.getElementById("data").value;
+                data=data.split(" ")
+                console.log(data)
+                for(var i=0;i<data.length;i++)
+                {
+                    var a = document.createElement('a');
+                    a.href = "ins.pdf";
+                    a.download = data[i]+"Install";
+                    a.click();
+                }
+                {
+                    var a = document.createElement('a');
+                    a.href = "sp.pdf";
+                    a.download = data[i]+"Spec";
+                    a.click();
+                }
+                {
+                    var a = document.createElement('a');
+                    a.href = "1.ies";
+                    a.download = data[i]+".ies";
+                    a.click();
                 }
             }
+            
         </script>
     </body>
 </html>
