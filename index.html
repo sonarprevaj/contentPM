@@ -1,32 +1,28 @@
 <html>
     <body>
-        <input type="text" id="data" />
-        <button onclick="downloadData()">download</button>
-        <!-- <a href="sp.pdf" download="1spc.pdf">download</a> -->
-        <!-- <a href="ins.pdf" download="1spc.pdf">download</a> -->
-        
+        <input type="text" id="data" placeholder="Enter items separated by spaces" />
+        <button onclick="downloadData()">Download</button>
 
         <script>
-            function downloadData(){
-                var data=document.getElementById("data").value;
-                data=data.split(" ")
-                console.log(data)
-                for(var i=0;i<data.length;i++)
-                {
-                    var a = document.createElement('a');
-                    a.href = "ins.pdf";
-                    a.download = data[i]+"Install";
-                    a.click();
+            function downloadData() {
+                var data = document.getElementById("data").value;
+                data = data.split(" ");
+                console.log(data);
+
+                for (var i = 0; i < data.length; i++) {
+                    // Download the installation file
+                    var installLink = document.createElement('a');
+                    installLink.href = "ins.pdf";
+                    installLink.download = data[i] + "Install.pdf";
+                    installLink.click();
+
+                    // Download the specification file
+                    var specLink = document.createElement('a');
+                    specLink.href = "sp.pdf";
+                    specLink.download = data[i] + "Spec.pdf";
+                    specLink.click();
                 }
-                {
-                    var a = document.createElement('a');
-                    a.href = "sp.pdf";
-                    a.download = data[i]+"Spec";
-                    a.click();
-                }
-               
             }
-            
         </script>
     </body>
 </html>
