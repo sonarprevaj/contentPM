@@ -19,14 +19,14 @@ data.forEach((item, index) => {
 setTimeout(() => {
 // Download the installation file
 var installLink = document.createElement('a');
-installLink.href = "ins.pdf";
-installLink.download = item + "Install.pdf";
+installLink.href = "ph.pdf";
+installLink.download = item + "Photometric.pdf";
 installLink.click();
 
 // Download the specification file
 var specLink = document.createElement('a');
-specLink.href = "sp.pdf";
-specLink.download = item + "Spec.pdf";
+specLink.href = "1.ies";
+specLink.download = item + ".ies";
 specLink.click();
 }, index * delay);
 });
