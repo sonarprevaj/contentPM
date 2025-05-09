@@ -1,36 +1,26 @@
 <html>
 <body>
-<input type="text" id="data" placeholder="Enter 1-30 items separated by spaces" />
-<button onclick="downloadData()">Download</button>
+<input type="text" id="data" />
+<button onclick="downloadData()">download</button>
+<!-- <a href="sp.pdf" download="1spc.pdf">download</a> -->
 
 <script>
-function downloadData() {
-var data = document.getElementById("data").value.trim().split(" ");
-
-// Check if the input has between 1 and 30 items
-if (data.length < 1 || data.length > 30) {
-alert("Please enter between 1 and 30 items.");
-return;
+function downloadData(){
+var data=document.getElementById("data").value;
+data=data.split(" ")
+console.log(data)
+for(var i=0;i<data.length;i++)
+{
+var a = document.createElement('a');
+a.href = "ph.pdf";
+a.download = data[i]+"Photometric";
+a.click();
+}
 }
 
-let delay = 1000; // 1-second delay between downloads
-
-data.forEach((item, index) => {
-setTimeout(() => {
-// Download the installation file
-var installLink = document.createElement('a');
-installLink.href = "ins.pdf";
-installLink.download = item + "Install.pdf";
-installLink.click();
-
-// Download the specification file
-var specLink = document.createElement('a');
-specLink.href = "sp.pdf";
-specLink.download = item + "Spec.pdf";
-specLink.click();
-}, index * delay);
-});
-}
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
