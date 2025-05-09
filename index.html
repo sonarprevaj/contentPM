@@ -1,13 +1,13 @@
 <html>
 <body>
-<input type="text" id="data" placeholder="Enter 10-20 items separated by spaces" />
+<input type="text" id="data" placeholder="Enter 10-45 items separated by spaces" />
 <button onclick="downloadData()">Download</button>
 
 <script>
 function downloadData() {
 var data = document.getElementById("data").value.trim().split(" ");
 
-// Check if the input has between 10 and 20 items
+// Check if the input has between 10 and 45 items
 if (data.length < 10 || data.length > 45) {
 alert("Please enter between 10 and 45 items.");
 return;
