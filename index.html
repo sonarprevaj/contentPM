@@ -8,7 +8,7 @@ function downloadData() {
 var data = document.getElementById("data").value.trim().split(" ");
 
 // Check if the input has between 1 and 45 items
-if (data.length < 10 || data.length > 45) {
+if (data.length < 1 || data.length > 45) {
 alert("Please enter between 1 and 45 items.");
 return;
 }
