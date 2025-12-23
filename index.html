@@ -1,15 +1,15 @@
 <html>
 <body>
-<input type="text" id="data" placeholder="Enter 1-45 items separated by spaces" />
+<input type="text" id="data" placeholder="Enter 1-65 items separated by spaces" />
 <button onclick="downloadData()">Download</button>
 
 <script>
 function downloadData() {
 var data = document.getElementById("data").value.trim().split(" ");
 
-// Check if the input has between 1 and 45 items
-if (data.length < 1 || data.length > 45) {
-alert("Please enter between 1 and 45 items.");
+// Check if the input has between 1 and 65 items
+if (data.length < 1 || data.length > 65) {
+alert("Please enter between 1 and 65 items.");
 return;
 }
 
@@ -19,8 +19,8 @@ data.forEach((item, index) => {
 setTimeout(() => {
 // Download the installation file
 var installLink = document.createElement('a');
-installLink.href = "ph.pdf";
-installLink.download = item + "Photometric.pdf";
+installLink.href = "ins.pdf";
+installLink.download = item + "Install.pdf";
 installLink.click();
 
 // Download the specification file
@@ -28,12 +28,25 @@ var specLink = document.createElement('a');
 specLink.href = "sp.pdf";
 specLink.download = item + "Spec.pdf";
 specLink.click();
+
+// Download the Photometric file
+var specLink = document.createElement('a');
+specLink.href = "ph.pdf";
+specLink.download = item + "Photometric.pdf";
+specLink.click();
+
+// Download the IES file
+var specLink = document.createElement('a');
+specLink.href = "1.ies";
+specLink.download = item + ".ies";
+specLink.click();
 }, index * delay);
 });
 }
 </script>
 </body>
 </html>
+
 
 
 
