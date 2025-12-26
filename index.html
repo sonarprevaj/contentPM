@@ -9,7 +9,7 @@ var data = document.getElementById("data").value.trim().split(" ");
 
 // Check if the input has between 1 and 65 items
 if (data.length < 1 || data.length > 65) {
-alert("Please enter between 1 and 65 items.");
+alert("Please enter between 1 and 75 items.");
 return;
 }
 
@@ -28,24 +28,13 @@ var specLink = document.createElement('a');
 specLink.href = "sp.pdf";
 specLink.download = item + "Spec.pdf";
 specLink.click();
-
-// Download the Photometric file
-var specLink = document.createElement('a');
-specLink.href = "ph6.pdf";
-specLink.download = item + "Photometric.pdf";
-specLink.click();
-
-// Download the IES file
-var specLink = document.createElement('a');
-specLink.href = "6.ies";
-specLink.download = item + ".ies";
-specLink.click();
 }, index * delay);
 });
 }
 </script>
 </body>
 </html>
+
 
 
 
