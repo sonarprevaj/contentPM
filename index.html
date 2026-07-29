@@ -1,15 +1,15 @@
 <html>
 <body>
-<input type="text" id="data" placeholder="Enter 1-75 items separated by spaces" />
+<input type="text" id="data" placeholder="Enter 10-20 items separated by spaces" />
 <button onclick="downloadData()">Download</button>
 
 <script>
 function downloadData() {
 var data = document.getElementById("data").value.trim().split(" ");
 
-// Check if the input has between 1 and 75 items
-if (data.length < 1 || data.length > 75) {
-alert("Please enter between 1 and 75 items.");
+// Check if the input has between 10 and 20 items
+if (data.length < 10 || data.length > 20) {
+alert("Please enter between 10 and 20 items.");
 return;
 }
 
@@ -34,7 +34,6 @@ specLink.click();
 </script>
 </body>
 </html>
-
 
 
 
